@@ -11,7 +11,7 @@
     >
       <h5 style="margin-top: -10px">Arkanoid Evolution Game</h5>
       <q-card
-        style="margin-top: -40px"
+        style="margin-top: -35px"
         flat
         class="glass-hud q-px-sm q-py-none full-width shadow-6"
       >
@@ -247,7 +247,7 @@ onUnmounted(() => {
 <style scoped>
 .arcade-bg {
   width: 100%;
-  min-height: 80%;
+  min-height: 100vh;
   background-color: #030712;
   background-image: radial-gradient(
     circle at 50% 20%,
@@ -300,5 +300,44 @@ onUnmounted(() => {
   background-color: rgba(3, 7, 18, 0.94);
   backdrop-filter: blur(8px);
   z-index: 10;
+}
+
+/* ==========================================================
+   RESPONSIVIDADE PARA TABLETS E PHONES (Sem tocar no Desktop)
+   ========================================================== */
+
+/* Telemóveis / Phones em modo retrato (Ecrãs até 480px) */
+@media (max-width: 480px) {
+  .arcade-bg {
+    padding: 4px !important;
+  }
+  .arkanoid-main-wrapper {
+    max-width: 100% !important;
+    padding: 0 2px;
+  }
+  .arkanoid-canvas {
+    max-height: 480px; /* Ajusta proporcionalmente para caber inteiro em ecrãs verticais de telemóvel */
+  }
+  .arcade-key {
+    width: 46px;
+    height: 38px;
+  }
+  h5 {
+    font-size: 1.05rem;
+  }
+}
+
+/* Tablets e Ecrãs Médios (Entre 481px e 1024px) */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .arkanoid-main-wrapper {
+    max-width: 460px;
+  }
+  .arkanoid-canvas {
+    max-height: 520px;
+  }
+  .arcade-key {
+    width: 58px;
+    height: 44px;
+  }
 }
 </style>
