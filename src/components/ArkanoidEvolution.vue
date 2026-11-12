@@ -154,8 +154,10 @@ const triggerRewind = () => {
 };
 
 const exitGame = () => {
-  if (window.history.length > 1) window.history.back();
-  else isGameOver.value = true;
+  window.close();
+  setTimeout(() => {
+    router.push('/');
+  }, 100);
 };
 
 const restartGame = () => {
