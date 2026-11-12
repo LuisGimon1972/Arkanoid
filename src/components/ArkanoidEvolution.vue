@@ -115,7 +115,9 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue';
 import { ArkanoidEngine } from '../game/arkanoidEngine';
+import { useRouter } from 'vue-router';
 
+const router = useRouter();
 const canvasRef = ref<HTMLCanvasElement | null>(null);
 const wrapperRef = ref<HTMLElement | null>(null);
 
